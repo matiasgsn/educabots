@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: Inter;
 }
 
 body{
@@ -31,6 +34,10 @@ body{
 }
 
 .hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     margin-top: 2em;
     width: 100%;
 }
@@ -41,4 +48,46 @@ body{
     object-fit: cover;
     border-bottom-left-radius: 48px;
     border-bottom-right-radius: 48px;
+}
+
+@media only screen and (max-width: 768px){
+    .hero-img{
+        height: 250%;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .hero-img{
+        height: 300%;
+    }
+}
+
+.hero-text{
+    position: absolute;
+    margin-top: 2vw;
+    margin-inline: auto;
+
+    font-size: 5vw;
+    text-align: center;
+    width: 15em;
+    color: white;
+}
+
+@media only screen and (max-width: 768px){
+    .hero-text{
+        margin-top: 60vw;
+        width: 10em;
+        font-size: 9vw;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .hero-text{
+        margin-top: 80vw;
+        width: 10em;
+    }
+}
+
+.bold{
+    font-weight: bolder;
 }
