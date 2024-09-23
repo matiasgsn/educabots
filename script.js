@@ -7,7 +7,7 @@ function swapMode(){
         document.documentElement.style.setProperty('--main-color-filter', 'var(--dark-color-filter)');
         document.documentElement.style.setProperty('--opposite-color-filter', 'var(--light-color-filter)');
 
-        modeimg.setAttribute('src', 'lightmode.svg');
+        modeimg.setAttribute('src', 'images/lightmode.svg');
         currentmode = 1;
     } else {
         document.documentElement.style.setProperty('--main-color', 'var(--light-color)');
@@ -15,7 +15,7 @@ function swapMode(){
         document.documentElement.style.setProperty('--main-color-filter', 'var(--light-color-filter)');
         document.documentElement.style.setProperty('--opposite-color-filter', 'var(--dark-color-filter)');
 
-        modeimg.setAttribute('src', 'darkmode.svg');
+        modeimg.setAttribute('src', 'images/darkmode.svg');
         currentmode = 0;
     }
 }
