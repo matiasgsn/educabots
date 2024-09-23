@@ -28,6 +28,12 @@ body{
     padding-top: 10em;
 }
 
+@media only screen and (max-width: 425px){
+    .logo{
+        min-width: 15em;
+    }
+}
+
 .logo img{
     width: 100%;
 
