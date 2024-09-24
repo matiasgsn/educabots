@@ -35,6 +35,14 @@
     text-decoration: underline;
 }
 
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
 .hoverGrow{
     transition: all .2s ease-in-out;
 }
@@ -439,7 +447,7 @@ body{
     background-color: var(--accent-color);
 
     font-size: 1.5em;
-    color: var(--dark-color);
+    color: var(--main-color);
 }
 
 .valoresCards-card:hover{
@@ -448,7 +456,9 @@ body{
 
 .valoresCards-nome{
     width: 100%;
+    font-weight: bold;
     text-align: center;
+
 
     font-size: 1em;
 }
@@ -540,7 +550,7 @@ body{
 
 .bnccCards-cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
     grid-template-rows: auto auto auto auto;
     row-gap: 2em;
     column-gap: 8em;
@@ -551,7 +561,8 @@ body{
 
 .bnccCards-card{
     border-radius: 1em;
-    padding: 4em;
+    margin: 1em;
+    padding: 3em;
     transition: all .2s ease-in-out;
 }
 
@@ -676,6 +687,8 @@ textarea.contact-item {
     border-style: none;
     border-radius: 100%;
     padding: 1em;
+    width: 4em;
+    height: 4em;
 
     background-color: var(--accent-color);
     cursor: pointer;
