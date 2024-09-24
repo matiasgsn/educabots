@@ -390,6 +390,8 @@ body{
     align-items: center;
     padding: 2em;
 
+    margin-bottom: 4vw;
+
     color: var(--main-color);
 }
 
@@ -433,6 +435,14 @@ body{
 
 .valoresCards-card:hover{
     transform: scale(1.1);
+}
+
+.valoresCards-nome{
+    width: 100%;
+    text-align: center;
+    word-break: keep-all;
+
+    font-size: 1em;
 }
 
 /*BNCC*/
