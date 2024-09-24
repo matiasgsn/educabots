@@ -449,8 +449,6 @@ body{
 .valoresCards-nome{
     width: 100%;
     text-align: center;
-    word-break: keep-all;
-    hyphens: none;
 
     font-size: 1em;
 }
