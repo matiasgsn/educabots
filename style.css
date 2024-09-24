@@ -31,6 +31,10 @@
     font-weight: bolder;
 }
 
+.underline{
+    text-decoration: underline;
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -172,7 +176,7 @@ body{
     top: -10em;
 
     width: 100%;
-    height: 200%;
+    height: auto;
     padding-top: 15em;
     background-color: var(--primary-color);
 }
@@ -182,12 +186,12 @@ body{
     flex-direction: row;
     align-items: center;
 
+    position: relative;
+
     margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-bottom: 20vh;
     padding-top: 5em;
     padding-bottom: 5em;
-
-    background: linear-gradient(90deg, rgba(91, 187, 240, 0) 0%, #5BBBF0 100%);
 }
 
 .infoContent{
@@ -256,19 +260,27 @@ body{
 }
 
 @media only screen and (max-width: 425px){
-    .info{
+    .info#info1{
         margin-top: 100vw;
+    }
+
+    .info#info2{
+        margin-top: 50vw;
     }
 }
 
 /*Info Modifiers*/
 
 .infoLeft{
+    background: linear-gradient(90deg, rgba(91, 187, 240, 0) 0%, #5BBBF0 100%);
     margin-right: 10%;
+
+    flex-direction: row;
 
     border-top-right-radius: 3em;
     border-bottom-right-radius: 3em;
 }
+
 
 @media only screen and (max-width: 425px){
     .infoLeft{
@@ -284,5 +296,74 @@ body{
         margin-right: 2vw;
         border-top-right-radius: 0em;
         border-bottom-left-radius: 0em;
+    }
+}
+
+.infoRight{
+    background: linear-gradient(-90deg, rgba(91, 187, 240, 0) 0%, #5BBBF0 100%);
+    margin-left: 10%;
+
+    flex-direction: row-reverse;
+
+    border-top-left-radius: 3em;
+    border-bottom-left-radius: 3em;
+}
+
+@media only screen and (max-width: 425px){
+    .infoRight{
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+    
+@media only screen and (min-width: 425px){
+    .infoRight > .info-image{
+        margin-left: 2vw;
+        border-top-left-radius: 0em;
+        border-bottom-right-radius: 0em;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .infoLeft, .infoRight{
+        flex-direction: column;
+    }
+}
+
+/*Info Scribbles*/
+.scribble{
+    z-index: 4;
+    position: absolute;
+    width: 95%;
+}
+
+.infoLeft > .scribble{
+    left: 50%;
+}
+
+.infoRight > .scribble{
+    transform: scaleX(-1);
+}
+
+.scribbleTop{
+    top: -6%;
+    transform: translate(-50%, 0);
+}
+
+.scribbleBottom{
+    bottom: -7%;
+    
+    transform: translate(-50%, 0);
+}
+
+@media only screen and (max-width: 768px){
+    .scribbleTop{
+        top: -2%;
+    }
+
+    .scribbleBottom{
+        bottom: -2%;
     }
 }
