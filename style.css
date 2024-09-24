@@ -246,6 +246,11 @@ body{
     border-radius: 3em;
 }
 
+#image2{
+    width: 150%;
+}
+
+
 @media only screen and (max-width: 768px){
     .info{
         margin-top: 40vw;
@@ -270,6 +275,10 @@ body{
 
     .info-image{
         width: 70%;
+    }
+
+    #image2{
+        width: unset;
     }
 }
 
@@ -441,6 +450,7 @@ body{
     width: 100%;
     text-align: center;
     word-break: keep-all;
+    hyphens: none;
 
     font-size: 1em;
 }
