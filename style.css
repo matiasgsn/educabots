@@ -24,6 +24,9 @@
 
     --opposite-color: var(--dark-color);
     --opposite-color-filter: invert(0%) sepia(0%) saturate(3739%) hue-rotate(193deg) brightness(92%) contrast(86%);
+
+    --logo-color-filter: none;
+    --logo-opposite-color-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(264deg) brightness(109%) contrast(109%);;
 }
 
 /* Utilidades */
@@ -56,7 +59,6 @@ body{
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    hyphens: auto;
 
     margin-inline: 1em;
     padding-top: 3em;
@@ -131,6 +133,7 @@ body{
 
 .logo img{
     width: 100%;
+    filter: var(--logo-color-filter);
 
 }
 
@@ -174,6 +177,7 @@ body{
     text-align: center;
     width: 15em;
     color: var(--white-color);
+    text-shadow: -1px 4px 11px rgba(0,0,0,0.69);
 }
 
 @media only screen and (max-width: 768px){
@@ -211,7 +215,7 @@ body{
     position: relative;
 
     margin-top: 5vh;
-    margin-bottom: 20vh;
+    margin-bottom: 10vh;
     padding-top: 5em;
     padding-bottom: 5em;
 }
@@ -231,7 +235,7 @@ body{
 
     margin-bottom: 1em;
 
-    font-size: 3em;
+    font-size: calc(1.5em + 1.5vw);
     font-weight: 800;
     line-height: 5vw;
     text-align: center;
@@ -240,7 +244,7 @@ body{
 .info-text{
     width: 60%;
 
-    font-size: 2em;
+    font-size: calc(1em + 1vw);
     font-weight: 500;
     line-height: 1em;
     letter-spacing: 0.05em;
@@ -249,7 +253,7 @@ body{
 
 .info-image{
     width: 40%;
-    height: 100%;
+    aspect-ratio: 4/3;
 
     border-radius: 3em;
 }
@@ -273,7 +277,7 @@ body{
     }
 
     .infoContent > .info-text{
-        font-size: 1.5em;
+        padding-inline: 2vw;
         margin-bottom: 1em;
     }
 
@@ -400,7 +404,7 @@ body{
 }
 
 /* Valores */
-.valoresCards{
+.bundleArea{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -412,55 +416,60 @@ body{
     color: var(--main-color);
 }
 
-.valoresCards-title{
+.bundleArea-title{
     width: 100%;
     text-align: center;
 
-    font-size: 3em;
+    font-size: calc(1.5em + 1.5vw);
     font-weight: bold;
     margin: 2em;
 }
 
-.valoresCards-cards{
+.bundleCard-wrapper{
     display: flex;
     flex-direction: row;
+
+    width: 75vw;
+    gap: 2.5em;
+    justify-content: center;
+
     flex-wrap: wrap;
+}
+
+.bundleCard{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
 
-    width: 75%;
-    gap: 2em;
-
-
-    margin-inline: 2em
-}
-
-.valoresCards-card{
-    display: flex;
-    justify-content: center;
-
-    border-radius: 1em;
-    padding: 4em;
-    transition: all .2s ease-in-out;
-
-    padding: 4em;
     background-color: var(--accent-color);
 
-    font-size: 1.5em;
-    color: var(--main-color);
+    width: calc(10em + 10vw);
+    height: calc(10em + 10vw);
+    border-radius: 2em;
+
+    transition: all .2s ease-in-out;
 }
 
-.valoresCards-card:hover{
+.bundleCard:hover{
     transform: scale(1.1);
 }
 
-.valoresCards-nome{
-    width: 100%;
+.bundleCard-nome {
+    font-size: 2em;
     font-weight: bold;
-    text-align: center;
+}
 
+@media only screen and (max-width: 768px){
+    .bundleCard-nome {
+        font-size: calc(1em + 2vw);
+        font-weight: bold;
+    }
+}
 
-    font-size: 1em;
+.bundleCard .valoresCard-wrapper{
+    margin-top: auto
 }
 
 /*BNCC*/
@@ -494,10 +503,18 @@ body{
 }
 
 .bncc-text{
+    text-align: justify;
+
     padding-top: 7vw;
-    font-size: 1.8em;
+    font-size: calc(1em + 1vw);
     padding-left: 6vw;
     padding-right: 6vw;
+}
+
+@media only screen and (max-width: 768px){
+    .bncc-text{
+        margin-inline: 3em;
+    }
 }
 
 .bnccCards{
@@ -544,14 +561,15 @@ body{
 
 @media only screen and (max-width: 425px){
     .bnccCards-title{
+        width: 75%;
         font-size: 1.8em;
     }
 }
 
 .bnccCards-cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-template-rows: min-content 1fr;
     row-gap: 2em;
     column-gap: 8em;
 
@@ -560,6 +578,11 @@ body{
 }
 
 .bnccCards-card{
+    grid-column: span 1;
+
+    display: grid;
+    grid-template-columns: subgrid;
+
     border-radius: 1em;
     margin: 1em;
     padding: 3em;
@@ -568,6 +591,19 @@ body{
 
 .bnccCards-card:hover{
     transform: scale(1.1);
+}
+
+.bnccCards-card-image{
+    width: 100%;
+    aspect-ratio: 4/3;
+
+}
+
+.bnccCards-card-image img {
+    object-fit: contain;
+
+    height: 100%;
+    width: 100%;
 }
 
 .bnccCards-card-title{
@@ -595,7 +631,7 @@ body{
     display: flex;
     flex-direction: column;
 
-    margin-top: -4em;
+    margin-top: -14em;
     align-items: center;
 }
 
