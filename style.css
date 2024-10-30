@@ -210,6 +210,7 @@ body{
     width: 100%;
     height: auto;
     padding-top: 15em;
+    padding-bottom: 2.5em;
     background-color: var(--primary-color);
 }
 
@@ -250,11 +251,12 @@ body{
 .info-text{
     width: 60%;
 
-    font-size: calc(1em + 1vw);
+    font-size: calc(0.8em + 1vw);
     font-weight: 500;
     line-height: 1em;
     letter-spacing: 0.05em;
     text-align: justify;
+    text-wrap: balance;
 }
 
 .info-image{
@@ -451,8 +453,8 @@ body{
 
     background-color: var(--accent-color);
 
-    width: calc(10em + 10vw);
-    height: calc(10em + 10vw);
+    width: calc(5em + 10vw);
+    height: calc(5em + 10vw);
     border-radius: 2em;
 
     transition: all .2s ease-in-out;
@@ -463,13 +465,13 @@ body{
 }
 
 .bundleCard-nome {
-    font-size: 2em;
+    font-size: calc(0.8em + 0.8vw);
     font-weight: bold;
 }
 
 @media only screen and (max-width: 768px){
     .bundleCard-nome {
-        font-size: calc(1em + 2vw);
+        font-size: 0.8em;
         font-weight: bold;
     }
 }
@@ -519,7 +521,8 @@ body{
 
 @media only screen and (max-width: 768px){
     .bncc-text{
-        margin-inline: 3em;
+        font-size: calc(0.8em + 1vw);
+        margin-inline: 2em;
     }
 }
 
@@ -624,6 +627,16 @@ body{
     text-align: justify;
     text-justify: inter-word;
     font-size: 1.2em;
+}
+
+@media only screen and (max-width: 768px){
+    .bnccCards-card-title{
+        margin-top: 1em;
+        font-size: calc(0.9em + 0.6vw);;
+    }
+    .bnccCards-card-text{
+        font-size: calc(0.6em + 0.6vw);
+    }
 }
 
 .waveFx{
