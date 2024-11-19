@@ -210,7 +210,6 @@ body{
     width: 100%;
     height: auto;
     padding-top: 15em;
-    padding-bottom: 2.5em;
     background-color: var(--primary-color);
 }
 
@@ -251,12 +250,11 @@ body{
 .info-text{
     width: 60%;
 
-    font-size: calc(0.8em + 1vw);
+    font-size: calc(1em + 1vw);
     font-weight: 500;
     line-height: 1em;
     letter-spacing: 0.05em;
     text-align: justify;
-    text-wrap: balance;
 }
 
 .info-image{
@@ -453,8 +451,8 @@ body{
 
     background-color: var(--accent-color);
 
-    width: calc(5em + 10vw);
-    height: calc(5em + 10vw);
+    width: calc(10em + 10vw);
+    height: calc(10em + 10vw);
     border-radius: 2em;
 
     transition: all .2s ease-in-out;
@@ -465,13 +463,13 @@ body{
 }
 
 .bundleCard-nome {
-    font-size: calc(0.8em + 0.8vw);
+    font-size: 2em;
     font-weight: bold;
 }
 
 @media only screen and (max-width: 768px){
     .bundleCard-nome {
-        font-size: 0.8em;
+        font-size: calc(1em + 2vw);
         font-weight: bold;
     }
 }
@@ -521,8 +519,7 @@ body{
 
 @media only screen and (max-width: 768px){
     .bncc-text{
-        font-size: calc(0.8em + 1vw);
-        margin-inline: 2em;
+        margin-inline: 3em;
     }
 }
 
@@ -627,16 +624,6 @@ body{
     text-align: justify;
     text-justify: inter-word;
     font-size: 1.2em;
-}
-
-@media only screen and (max-width: 768px){
-    .bnccCards-card-title{
-        margin-top: 1em;
-        font-size: calc(0.9em + 0.6vw);;
-    }
-    .bnccCards-card-text{
-        font-size: calc(0.6em + 0.6vw);
-    }
 }
 
 .waveFx{
@@ -758,4 +745,41 @@ textarea.contact-item {
 .footer-copyright{
     font-size: 1em;
     color: var(--opposite-color);
+}
+
+/* obrigado.html */
+
+.mainobg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #008080;
+    flex-direction: column;
+}
+
+.textobg{
+    font-size: 2.8rem;
+    color: #f5f5f5;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.paragrafoobg{
+    color: #f5f5f5;
+    margin-bottom: 50px; 
+}
+
+.btn{
+    padding: 15px 55px;
+    background: #FBC105;
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    border-radius: 16px;
+    transition: all 0.5s;
+}
+
+.btn:hover{
+    transform: scale(1.05);
 }
